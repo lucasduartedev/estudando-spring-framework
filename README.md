@@ -51,7 +51,7 @@ public class ClasseTeste {
 }
 ```
 
-Para definir uma URI para um método, basta utilizar as mesmas regras. Podemos usar __@RequestMapping__ tando em classes com __@Controller__ ou __@RestController__.
+Para definir uma URI para um método, basta utilizar as mesmas regras, colocando a anotação sobre o método. Podemos usar __@RequestMapping__ tando em classes com __@Controller__ ou com __@RestController__.
 
 _Exemplo:_
 
