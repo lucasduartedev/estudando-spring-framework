@@ -5,13 +5,13 @@
 ## _Tecnologias usadas_
 
 > __Base de dados MySQL__
-- Foi definido como base de dados o MySQL v8.0.22.
+- Foi definido como base de dados o __MySQL v8.0.22__.
 
 > __Docker__
-- Será o responsável por manter a base de dados, em container, disponível para acesso da aplicação durante o processo de desenvolvimento.
+- Será o responsável por manter a base de dados, em _container_, disponível para acesso da aplicação durante o processo de desenvolvimento.
 
 > __Postman__
-- O Postman será usado para testar as requisições durante o desenvolvimento do projeto.
+- O Postman será usado para testar as rotas do sistema.
 
 ## _Dependências Spring Boot_
 - Spring Web
@@ -20,7 +20,7 @@
 - MySQL Driver
 - Spring Boot DevTools
 
-# _Anotações do Spring Framework_
+## _Anotações do Spring aplicadas no projeto_
 - ## Diferença entre __@Controller__ e __@RestController__
 
 > @Controller
@@ -29,17 +29,20 @@ A anotação __@Controller__ é atribuída a uma classe quando o sistema tem a c
 
 > @RestController
 
-Para o uso da anotação __@RestController__ o aplicação terá como resposta das requisições dados na forma JSON ou XML.
+Para o uso da anotação __@RestController__ o aplicação terá como resposta das requisições dados em formato representacional, JSON ou XML, por exemplo.
 
 - ## Mapeamento de rotas
 
 > @RequestMapping
 
-Com a anotação __@RequestMapping__ podemos definir uma rota de acesso em uma classe ou em um método. Nas _classes_ essa anotação define uma rota raíz de acesso para os métodos existentes na classe em questão, por exemplo, você pode definir que a rota raíz seja __"/categoria"__.
+`A anotação __@RequestMapping__ é usada tanto com __@Controller__ ou com __@RestController__.`
+
+Com a anotação __@RequestMapping__ podemos definir uma rota de acesso em uma classe ou em um método.
+
+Nas _classes_ essa anotação define uma rota raíz de acesso para todos os métodos existentes na classe em questão, por exemplo, você pode definir que a rota raíz seja __"/categoria"__.
 
 _Exemplo:_
 ``` java
-
 @RestController
 @RequestMapping("/categoria")
 public class ClasseTeste {
@@ -51,10 +54,9 @@ public class ClasseTeste {
 }
 ```
 
-Para definir uma URI para um método, basta utilizar as mesmas regras, colocando a anotação sobre o método. Podemos usar __@RequestMapping__ tando em classes com __@Controller__ ou com __@RestController__.
+Para definir uma URI nos métodos, basta utilizar as mesmas regras, colocando a anotação sobre o método desejado.
 
 _Exemplo:_
-
 ``` java
 @Controller
 @RequestMapping("/categoria")
