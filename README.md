@@ -71,3 +71,21 @@ public class ClasseTeste {
 
 }
 ```
+
+- ## Métodos HTTP
+
+> __@GetMapping__
+
+O método _get_ recebe parâmetros passados no cabeçalho da requisição e podem ser vistos pela URI. Os parâmetros server para fazer buscas em base de dados, por exemplo, trazendo um dados específico ou uma massa de dados.
+
+> __@PostMapping__
+
+O método _post_ serve para inserir informação nova em base de dados, muito usando em formulário.
+
+> __@PutMapping__ & __@PatchMapping__
+
+Para atualização parcial, quando não temos a necessidade de criar novas informações, como é feito pelo método _post_.
+
+> __@DeleteMapping__
+
+Com o método _delete_ podemos apagar registros em base de dados.
