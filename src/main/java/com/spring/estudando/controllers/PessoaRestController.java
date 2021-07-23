@@ -13,7 +13,7 @@ import com.spring.estudando.repositories.PessoaRepository;
 
 @RestController
 @RequestMapping("/pessoas")
-public class PessoaController {
+public class PessoaRestController {
 
 	@Autowired
 	private PessoaRepository pessoaRepository;
@@ -24,7 +24,7 @@ public class PessoaController {
 		return "Controller: 'PessoaContrller'";
 	}
 	
-	@GetMapping("/")
+	@GetMapping
 	public List<Pessoa> pessoas() {
 		return pessoaRepository.findAll();
 	}
