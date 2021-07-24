@@ -20,6 +20,18 @@
 - MySQL Driver
 - Spring Boot DevTools
 
+## _Arquitetura do projeto_
+
+- Foi aplicado o Model View Controller
+
+### src/main/java:
+
+    com.spring.estudando
+    com.spring.estudando.config
+    com.spring.estudando.controllers
+    com.spring.estudando.models
+    com.spring.estudando.repositories
+
 ## _Anotações do Spring aplicadas no projeto_
 - ## Diferença entre __@Controller__ e __@RestController__
 
@@ -89,3 +101,10 @@ Para atualização parcial, quando não temos a necessidade de criar novas infor
 > __@DeleteMapping__
 
 Com o método _delete_ podemos apagar registros em base de dados.
+
+
+- ## Diferença entre __@ResponseBody__ e __@RequestBody__
+
+> __@ResponseBody__
+
+> __@RequestMapping__
