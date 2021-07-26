@@ -6,24 +6,46 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
+
     <title>Página inicial</title>
 </head>
 <body>
+
+	<div class="container">
     
-    <header>
-        <h1>Página Inicial</h1>
-    </header>
-
-    <div>
-        <h2>Sistema de cadastro de pessoas</h2>
-        <p><a href="/pessoas/cadastrar">Cadastro!</a>!</p>
-    </div>
-
-    <div th:each="pessoa: ${pessoas}">
-        <div class="row">
-            <p><span th:text="${pessoa.nome}"></span></p>
-        </div>
-    </div>
-
+	    <header>
+	        <h1>Sistema de cadastro de pessoas</h1>
+	    </header>
+	
+	    <div>
+	        <a href="/pessoas/cadastrar" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Cadastro</a>
+	    </div>
+	
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>NOME</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+		    	<tr th:each="pessoa: ${pessoas}">
+		            <td><span th:text="${pessoa.id}"></span></td>
+		            <td><span th:text="${pessoa.nome}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	
+	    <!--Materialize-->
+	    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+    
+	</div>
+	
 </body>
 </html>

@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
-	@RequestMapping(value = {"", "/", "index"})
+	@RequestMapping(value = {"", "/", "/index"})
 	public String home() {
-//		return "<h1>Página Home</h1>";
-		return "index";
+		return "redirect:/pessoas";
 	}
 
 }
