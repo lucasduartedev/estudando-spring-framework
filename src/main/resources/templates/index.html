@@ -31,6 +31,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				<tr>
 					<th>ID</th>
 					<th>NOME</th>
+					<th>DATA DE NASCIMENTO</th>
 				</tr>
 			</thead>
 			
@@ -38,6 +39,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 		    	<tr th:each="pessoa: ${pessoas}">
 		            <td><span th:text="${pessoa.id}"></span></td>
 		            <td><span th:text="${pessoa.nome}"></span></td>
+		            <td><span th:text="${pessoa.dataNasc}"></span></td>
 				</tr>
 			</tbody>
 		</table>
