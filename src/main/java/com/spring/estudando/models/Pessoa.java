@@ -20,6 +20,9 @@ public class Pessoa implements Serializable {
 	@Column(name = "nome")
 	private String nome;
 	
+	@Column(name = "dataNasc")
+	private String dataNasc;
+	
 	// Contrutores
 	public Pessoa() {}
 
@@ -42,6 +45,18 @@ public class Pessoa implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getDataNasc() {
+		return dataNasc;
+	}
+
+	public void setDataNasc(String dataNasc) {
+		this.dataNasc = dataNasc;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override

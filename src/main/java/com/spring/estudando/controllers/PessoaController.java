@@ -22,10 +22,8 @@ public class PessoaController {
 	
 	@RequestMapping(value="/pessoas/cadastrar", method=RequestMethod.POST)
 	public String form(Pessoa pessoa) {
-		
 		pessoaRepository.save(pessoa);
-		
-		return "redirect:/pessoas/cadastrar";
+		return "redirect:/pessoas";
 	}
 	
 	@RequestMapping("/pessoas")
