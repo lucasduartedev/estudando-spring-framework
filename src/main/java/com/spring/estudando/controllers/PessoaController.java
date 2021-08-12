@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.estudando.models.Pessoa;
@@ -22,7 +23,15 @@ public class PessoaController {
 	
 	@RequestMapping(value="/pessoas/cadastrar", method=RequestMethod.POST)
 	public String form(Pessoa pessoa) {
-		pessoaRepository.save(pessoa);
+		
+		// Verificar dados informados
+		if(pessoa.getNome() == null || pessoa.getNome().isEmpty()) {
+			return "redirect:/pessoas/cadastrar";			
+		}
+		
+		pessoaRepository.save(pessoa);			
+		
+		// Redirecionar: lista de pessoas cadastradas
 		return "redirect:/pessoas";
 	}
 	
@@ -33,5 +42,15 @@ public class PessoaController {
 		mv.addObject("pessoas", pessoas);
 		return mv;
 	}
-
+	
+	// Pesquisa por filtro
+	
+	@RequestMapping("/pessoas/filtrar")
+	public ModelAndView filtrarPessoas(@RequestParam("name") String name) {
+		ModelAndView mv = new ModelAndView("index");
+		Iterable<Pessoa> pessoas = pessoaRepository.findByNomeContains(name);
+		mv.addObject("pessoas", pessoas);
+		return mv;
+	}
+	
 }

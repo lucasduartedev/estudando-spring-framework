@@ -19,7 +19,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<div class="container">
     
 	    <header>
-	        <h1>Sistema de cadastro de pessoas</h1>
+	        <h1 class="grey-text z-depth-0" >Sistema de cadastro de pessoas</h1>
 	    </header>
 	
 	    <div>
@@ -37,7 +37,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 			
 			<tbody>
 		    	<tr th:each="pessoa: ${pessoas}">
-		            <td><span th:text="${pessoa.id}"></span></td>
+		            <td><span th:text="${pessoa.id}" class="center-align"></span></td>
 		            <td><span th:text="${pessoa.nome}"></span></td>
 		            <td><span th:text="${pessoa.dataNasc}"></span></td>
 				</tr>
