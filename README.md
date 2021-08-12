@@ -13,7 +13,7 @@
 > __Postman__
 - O Postman será usado para testar as rotas do sistema.
 
-## _Dependências Spring Boot_
+## _Dependências_
 - Spring Web
 - Thymeleaf
 - Spring Data JPA
@@ -22,7 +22,7 @@
 
 ## _Arquitetura do projeto_
 
-- Foi aplicado o Model View Controller
+- Foi aplicado o Model View Controller - MVC.
 
 ### src/main/java:
 
@@ -31,6 +31,14 @@
     com.spring.estudando.controllers
     com.spring.estudando.models
     com.spring.estudando.repositories
+
+
+## _Sistema desenvolvido_
+
+- Foi desenvolvido um sistema de cadastro de pessoas que apenas solicita nome e data de nascimento no formulário.
+
+- Para deixar a página mais elegante, o projeto tem o [Materialize CSS](https://materializecss.com/).
+
 
 ## _Anotações do Spring aplicadas no projeto_
 - ## Diferença entre __@Controller__ e __@RestController__
@@ -101,10 +109,3 @@ Para atualização parcial, quando não temos a necessidade de criar novas infor
 > __@DeleteMapping__
 
 Com o método _delete_ podemos apagar registros em base de dados.
-
-
-- ## Diferença entre __@ResponseBody__ e __@RequestBody__
-
-> __@ResponseBody__
-
-> __@RequestMapping__
