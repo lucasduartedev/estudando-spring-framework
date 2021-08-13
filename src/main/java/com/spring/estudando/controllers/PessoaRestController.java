@@ -23,5 +23,11 @@ public class PessoaRestController {
 		return this.pessoaRepository.findByNomeContains(name);
 		
 	}
+	
+	@GetMapping("/data")
+	public List<Pessoa> findByData(@RequestParam("datanasc") String datanasc) {
+		System.out.println(datanasc);
+		return this.pessoaRepository.findByDataNasc(datanasc);
+	}
 
 }

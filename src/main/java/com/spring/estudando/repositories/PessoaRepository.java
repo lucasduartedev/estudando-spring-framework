@@ -11,5 +11,7 @@ import com.spring.estudando.models.Pessoa;
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 	
 	List<Pessoa> findByNomeContains(String name);
-
+	
+	List<Pessoa> findByDataNasc(String data_nasc);
+	
 }
