@@ -26,8 +26,14 @@ public class PessoaRestController {
 	
 	@GetMapping("/data")
 	public List<Pessoa> findByData(@RequestParam("datanasc") String datanasc) {
-		System.out.println(datanasc);
 		return this.pessoaRepository.findByDataNasc(datanasc);
+	}
+	
+	@GetMapping("/entre/data")
+	public List<Pessoa> findBetweenBirthday(
+			@RequestParam("data1") String data1,
+			@RequestParam("data2") String data2) {
+		return this.pessoaRepository.findByBetweenBirthday(data1, data2);
 	}
 
 }

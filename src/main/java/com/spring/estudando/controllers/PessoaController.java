@@ -44,7 +44,6 @@ public class PessoaController {
 	}
 	
 	// Pesquisa por filtro
-	
 	@RequestMapping("/pessoas/filtrar")
 	public ModelAndView filtrarPessoas(@RequestParam("name") String name) {
 		ModelAndView mv = new ModelAndView("index");
