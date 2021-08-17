@@ -35,5 +35,6 @@ public class PessoaRestController {
 			@RequestParam("data2") String data2) {
 		return this.pessoaRepository.findByBetweenBirthday(data1, data2);
 	}
+	
 
 }

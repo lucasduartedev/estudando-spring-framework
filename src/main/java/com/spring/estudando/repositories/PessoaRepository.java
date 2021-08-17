@@ -18,4 +18,5 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 	@Query("SELECT p FROM pessoas p WHERE p.dataNasc BETWEEN ?1 AND ?2")
 	List<Pessoa> findByBetweenBirthday(String data1, String data2);
 	
+	
 }
