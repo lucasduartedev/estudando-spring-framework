@@ -11,17 +11,18 @@ import com.spring.estudando.models.Pessoa;
 import com.spring.estudando.repositories.PessoaRepository;
 
 @Controller
+@RequestMapping("/pessoas")
 public class PessoaController {
 	
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
-	@RequestMapping(value="/pessoas/cadastrar", method=RequestMethod.GET)
+	@RequestMapping(value="/cadastrar", method=RequestMethod.GET)
 	public String form() {
 		return "pessoa/cadastropessoa";
 	}
 	
-	@RequestMapping(value="/pessoas/cadastrar", method=RequestMethod.POST)
+	@RequestMapping(value="/cadastrar", method=RequestMethod.POST)
 	public String form(Pessoa pessoa) {
 		
 		// Verificar dados informados
@@ -35,7 +36,7 @@ public class PessoaController {
 		return "redirect:/pessoas";
 	}
 	
-	@RequestMapping("/pessoas")
+	@RequestMapping
 	public ModelAndView listaPessoas() {
 		ModelAndView mv = new ModelAndView("index");
 		Iterable<Pessoa> pessoas = pessoaRepository.findAll();
@@ -44,7 +45,7 @@ public class PessoaController {
 	}
 	
 	// Pesquisa por filtro
-	@RequestMapping("/pessoas/filtrar")
+	@RequestMapping("/filtrar")
 	public ModelAndView filtrarPessoas(@RequestParam("name") String name) {
 		ModelAndView mv = new ModelAndView("index");
 		Iterable<Pessoa> pessoas = pessoaRepository.findByNomeContains(name);
